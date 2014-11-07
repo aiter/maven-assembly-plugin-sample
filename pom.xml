@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jihaoxian.samples</groupId>
+  <artifactId>maven-assembly-plugin-sample</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+			<artifactId>maven-assembly-plugin</artifactId>
+			<configuration>
+				<appendAssemblyId>false</appendAssemblyId>
+				<descriptors>
+					<descriptor>src/main/assemble/package.xml</descriptor>
+				</descriptors>
+			</configuration>
+			<executions>
+				<execution>
+					<id>make-assembly</id>
+					<phase>package</phase>
+					<goals>
+						<goal>single</goal><!-- 只运行一次 -->  
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+  		<!-- 日志相关 -->
+	    <!-- 日志相关 slf4j-api -->
+	   <dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+	</dependencies>
+</project>

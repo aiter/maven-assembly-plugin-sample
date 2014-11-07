@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="STDOUTLOG" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../logs/application.log"/>
+		<param name="Append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %5p [%t] (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+    
+	<category name="STDOUTLOG" additivity="false">
+		<priority value="INFO"/>
+		<appender-ref ref="STDOUTLOG"/>
+	</category>
+	<category name="com.jihaoxian.sample" additivity="false">
+		<!--
+		<priority value="DEBUG"/>
+		<priority value="INFO"/>
+		<priority value="ERROR"/>
+		-->
+
+		<priority value="INFO"/>
+		<appender-ref ref="STDOUTLOG"/>
+	</category>
+</log4j:configuration>
