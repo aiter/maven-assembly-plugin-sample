@@ -2,21 +2,21 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.0.0.xsd">
 	<id>maven-assemble-plugin-sample</id>
 	<formats>
-		<format>zip</format>
+		<format>zip</format><!-- 文件类型。还支持：tar.gz；tar.bz2；jar等 -->
 	</formats>
-	<includeBaseDirectory>true</includeBaseDirectory>
+	<includeBaseDirectory>true</includeBaseDirectory><!-- 压缩包是否包含项目本身的文件夹 -->
 	<fileSets>
 		<fileSet>
-			<directory>src/main/resources</directory>
+			<directory>src/main/resources</directory><!-- 将项目中的文件输出到发布包的目录。这里是将resources目录下的配置文件输出到conf目录下 -->
 			<outputDirectory>/conf</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>src/main/bin</directory>
+			<directory>src/main/bin</directory><!-- 这里放的是执行脚本 -->
 			<outputDirectory>/bin</outputDirectory>
 		</fileSet>
 	</fileSets>
 	<dependencySets>
-		<dependencySet>
+		<dependencySet><!-- 将依赖的jar输出到lib目录下 -->
 			<outputDirectory>lib</outputDirectory>
 			<scope>compile</scope>
 		</dependencySet>

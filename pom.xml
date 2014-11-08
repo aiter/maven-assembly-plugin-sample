@@ -21,7 +21,7 @@
 			<configuration>
 				<appendAssemblyId>false</appendAssemblyId>
 				<descriptors>
-					<descriptor>src/main/assemble/package.xml</descriptor>
+					<descriptor>src/main/assemble/package.xml</descriptor><!-- 这里是具体配置文件的位置 -->
 				</descriptors>
 			</configuration>
 			<executions>
